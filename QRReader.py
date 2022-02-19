@@ -27,9 +27,10 @@ capture.set(4,480)
 while True:
     success, image = capture.read()
     for code in decode(image):                  # to decode the image into strings
-        theData = code.data.decode('utf-8')
-
-
+        Data = code.data.decode('utf-8')
+        qrshapes = np.array([code.polygon], np.int32)     # used to create a shape around the qr 
+        qrshapes = qrshapes.reshape((-1,1,2))
+        cv2.polylines(image,[qrshapes], True, (57,255,20), 5)
 
 
 
