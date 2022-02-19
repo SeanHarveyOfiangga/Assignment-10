@@ -31,7 +31,8 @@ while True:
         qrshapes = np.array([code.polygon], np.int32)     # used to create a shape around the qr 
         qrshapes = qrshapes.reshape((-1,1,2))
         cv2.polylines(image,[qrshapes], True, (57,255,20), 5)
-
+        DateAndTime = datetime.now()                            # for getting the date and time
+        FormatOfDateAndTime = DateAndTime.strftime("Date: %B %d, %Y \nTime: %H:%M:%S")
 
 
 
