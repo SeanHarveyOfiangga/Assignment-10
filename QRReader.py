@@ -33,6 +33,8 @@ while True:
         cv2.polylines(image,[qrshapes], True, (57,255,20), 5)
         DateAndTime = datetime.now()                            # for getting the date and time
         FormatOfDateAndTime = DateAndTime.strftime("Date: %B %d, %Y \nTime: %H:%M:%S")
+        TextFile = open('Contact Tracing Info.txt', 'w')
+        TextFile.write(f'{Data}\n\n{FormatOfDateAndTime}')  #Generating a new text file with date and time
 
 
 
