@@ -19,11 +19,15 @@ import numpy as np
 from pyzbar.pyzbar import decode
 from datetime import datetime
 
-capture = cv2.VideoCapture(0)           #for the camera
+
+capture = cv2.VideoCapture(0)               # for the use of webcam
 capture.set(3,640)
 capture.set(4,480)
 
-
+while True:
+    success, image = capture.read()
+    for code in decode(image):                  # to decode the image into strings
+        theData = code.data.decode('utf-8')
 
 
 
