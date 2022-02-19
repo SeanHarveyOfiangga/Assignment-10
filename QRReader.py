@@ -35,7 +35,12 @@ while True:
         FormatOfDateAndTime = DateAndTime.strftime("Date: %B %d, %Y \nTime: %H:%M:%S")
         TextFile = open('Contact Tracing Info.txt', 'w')
         TextFile.write(f'{Data}\n\n{FormatOfDateAndTime}')  #Generating a new text file with date and time
+    cv2.imshow('Result', image)
+    if cv2.waitKey(1) == ord('q'):
+        break
 
+capture.release()
+cv2.destroyAllWindows()
 
 
 
