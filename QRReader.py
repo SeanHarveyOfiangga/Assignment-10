@@ -19,7 +19,9 @@ import numpy as np
 from pyzbar.pyzbar import decode
 from datetime import datetime
 
-
+capture = cv2.VideoCapture(0)           #for the camera
+capture.set(3,640)
+capture.set(4,480)
 
 
 
